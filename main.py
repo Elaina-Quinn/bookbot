@@ -1,7 +1,3 @@
-# new function to count number of each character in book
-# go through each word and add character to running count
-    # make a dictionary
-
 # counts words in book
 def word_count(book):
     words = book.split()
@@ -20,15 +16,24 @@ def character_counter(lowercase_book):
 
     return character_count
 
+# prints results
+def results(length, characters):
+    print (
+        f"--- Begin report of books/frankenstein.txt --- \n {length} words found in the document \n"
+    )
+
+    for i in characters:
+        print (
+            f"The '{i}' character was found {characters[i]} times"
+        )
+
+
 
 def main():
     file_contents = ""
     with open("books/frankenstein.txt") as book:
         file_contents = book.read()
 
-    print (word_count(file_contents))
-
-    print (character_counter(file_contents.lower()))
-
+    results(word_count(file_contents), character_counter(file_contents.lower()))
 
 main()
