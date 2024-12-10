@@ -27,6 +27,10 @@ def results(length, characters):
             f"The '{i}' character was found {characters[i]} times"
         )
 
+    print (
+        "--- End report ---"
+    )
+
 
 
 def main():
